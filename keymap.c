@@ -1,8 +1,8 @@
 #include QMK_KEYBOARD_H
 
 enum sofle_layers {
-    L_QWERTY,
     L_COLEMAK,
+    L_QWERTY,
     L_CHARS,
     L_MOVE,
     L_AUX
@@ -43,28 +43,6 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
- * QWERTY
- * ,-----------------------------------------.                    ,-----------------------------------------.
- * |  `   |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | Del  |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Tab  |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  | Bspc |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | ESC  |   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |  '   |
- * |------+------+------+------+------+------| Mute  |    | Stop  |------+------+------+------+------+------|
- * |LShift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |RShift|
- * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR |CHARS | /Space  /       \Space \  | MOVE | RCTR | RAlt | RGUI |
- *            |      |      |      |      |/       /         \      \ |      |      |      |      |
- *            `----------------------------------'           '------''---------------------------'
- */
-[L_QWERTY] = LAYOUT( \
-		KC_GRV,        KC_1,          KC_2,              KC_3,           KC_4,       KC_5,                                            KC_6,               KC_7,    KC_8,    KC_9,          KC_0,          KC_DEL,
-		KC_TAB,        KC_Q,          KC_W,              KC_E,           KC_R,       KC_T,                                            KC_Y,               KC_U,    KC_I,    KC_O,          KC_P,          KC_BSPC,
-		KC_MY_ESC,     KC_A,          KC_S,              KC_D,           KC_F,       KC_G,                                            KC_H,               KC_J,    KC_K,    KC_L,          KC_SCLN,       KC_QUOT,
-		KC_LSFT,       KC_Z,          KC_X,              KC_C,           KC_V,       KC_B,                KC_MY_L_KNOB, KC_MY_R_KNOB, KC_N,               KC_M,    KC_COMM, KC_DOT,        KC_SLSH,       KC_RSFT,
-                                      KC_LGUI,           KC_LALT,        KC_LCTL,    LT(L_CHARS, KC_BSPC),KC_SPC,       KC_SPC,       LT(L_MOVE, KC_BSPC),KC_RCTL, KC_RALT, KC_RGUI),
-                                      /* KC_LGUI,           KC_LALT,        KC_LCTL,    KC_MY_CHARS,KC_SPC,       KC_SPC,       KC_MY_MOVE,KC_RCTL, KC_RALT, KC_RGUI), */
-/*
  * COLEMAK
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |  `   |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | Del  |
@@ -86,6 +64,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		  KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,       KC_MY_L_KNOB, KC_MY_R_KNOB, KC_K,       KC_M,     KC_COMM,  KC_DOT,  KC_SLSH,  KC_RSFT,
                             KC_LGUI,           KC_LALT,        KC_LCTL,    LT(L_CHARS, KC_BSPC),KC_SPC,       KC_SPC,       LT(L_MOVE, KC_BSPC),KC_RCTL, KC_RALT, KC_RGUI),
 							/* KC_LGUI, KC_LALT, KC_LCTRL,KC_MY_CHARS,KC_SPC,       KC_SPC,       KC_MY_MOVE, KC_RCTRL, KC_RALT, KC_RGUI), */
+
+/*
+ * QWERTY
+ * ,-----------------------------------------.                    ,-----------------------------------------.
+ * |  `   |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | Del  |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * | Tab  |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  | Bspc |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * | ESC  |   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |  '   |
+ * |------+------+------+------+------+------| Mute  |    | Stop  |------+------+------+------+------+------|
+ * |LShift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |RShift|
+ * `-----------------------------------------/       /     \      \-----------------------------------------'
+ *            | LGUI | LAlt | LCTR |CHARS | /Space  /       \Space \  | MOVE | RCTR | RAlt | RGUI |
+ *            |      |      |      |      |/       /         \      \ |      |      |      |      |
+ *            `----------------------------------'           '------''---------------------------'
+ */
+[L_QWERTY] = LAYOUT( \
+		KC_GRV,        KC_1,          KC_2,              KC_3,           KC_4,       KC_5,                                            KC_6,               KC_7,    KC_8,    KC_9,          KC_0,          KC_DEL,
+		KC_TAB,        KC_Q,          KC_W,              KC_E,           KC_R,       KC_T,                                            KC_Y,               KC_U,    KC_I,    KC_O,          KC_P,          KC_BSPC,
+		KC_MY_ESC,     KC_A,          KC_S,              KC_D,           KC_F,       KC_G,                                            KC_H,               KC_J,    KC_K,    KC_L,          KC_SCLN,       KC_QUOT,
+		KC_LSFT,       KC_Z,          KC_X,              KC_C,           KC_V,       KC_B,                KC_MY_L_KNOB, KC_MY_R_KNOB, KC_N,               KC_M,    KC_COMM, KC_DOT,        KC_SLSH,       KC_RSFT,
+                                      KC_LGUI,           KC_LALT,        KC_LCTL,    LT(L_CHARS, KC_BSPC),KC_SPC,       KC_SPC,       LT(L_MOVE, KC_BSPC),KC_RCTL, KC_RALT, KC_RGUI),
+                                      /* KC_LGUI,           KC_LALT,        KC_LCTL,    KC_MY_CHARS,KC_SPC,       KC_SPC,       KC_MY_MOVE,KC_RCTL, KC_RALT, KC_RGUI), */
 
 [L_CHARS] = LAYOUT( \
 		KC_SLCK,       KC_F1,         KC_F2,             KC_F3,          KC_F4,      KC_F5,                        KC_F6,     KC_F7,   KC_F8,   KC_F9,         KC_F10,        KC_F11,
@@ -179,6 +180,8 @@ enum Actions {
     aScroll,
     aZoom,
     aPage,
+    aLRArrows,
+    aUDArrows,
     aVim,
     aCount
 };
@@ -339,6 +342,8 @@ const char* knob_to_str(int idx)
         case aScroll: return "whl ";
         case aZoom: return "zoom";
         case aPage: return "page";
+        case aLRArrows: return "<>  ";
+        case aUDArrows: return "^v  ";
         case aVim: return "vim ";
     }
     return "???";
@@ -346,24 +351,36 @@ const char* knob_to_str(int idx)
 
 static void print_status_right(void)
 {
-    oled_clear();
-
-    if (get_highest_layer(default_layer_state) == L_COLEMAK)
+    /* if (get_highest_layer(default_layer_state) == L_COLEMAK) */
+    /* if (get_mods() & MOD_MASK_SHIFT) */
+    if (get_highest_layer(layer_state) == L_AUX)
     {
-        oled_write_P(PSTR("\nJLUY;\n"), false);
-        oled_write_P(PSTR("\nHNEIO\n"), false);
-        oled_write_P(PSTR("\nKM,./\n"), false);
-        return;
-    }
-
-    if (get_mods() & MOD_MASK_SHIFT)
-    {
-        oled_write_P(PSTR("\n!@#$%\n"), false);
+        oled_clear();
         oled_write_P(PSTR("^&*()\n"), false);
-        oled_write_P(PSTR("[{(<\n\n"), false);
-        oled_write_P(PSTR("+-=_\n"), false);
+        oled_write_P(PSTR("\nJLUY;"), false);
+        oled_write_P(PSTR("\nHNEIO"), false);
+        oled_write_P(PSTR("\nKM,./\n"), false);
+        oled_write_P(PSTR("\n>)}]"), false);
         return;
     }
+
+	oled_clear();
+    oled_write_P(PSTR("\n\n\n\nWPM\n"), false);
+
+    itoa(get_current_wpm(), g_wpm_buf, 9);
+    oled_write(g_wpm_buf, false);
+
+    static const char PROGMEM qmk_logo[] = {
+        153,154,10,
+        185,186,0
+    };
+
+	/* for (int i = 0; i < 3; i++) */
+	{
+		oled_write_P(PSTR("\n\n\n"), false);
+		oled_write_P(qmk_logo, false);
+	}
+
     /* else */
     /* { */
     /*     static const char PROGMEM qmk_logo[] = { */
@@ -379,12 +396,15 @@ static void print_status_right(void)
 
 static void print_status_left(void)
 {
-    if (get_highest_layer(default_layer_state) == L_COLEMAK)
+    if (get_highest_layer(layer_state) == L_AUX)
     {
         oled_clear();
-        oled_write_P(PSTR("\nQWFPG\n"), false);
-        oled_write_P(PSTR("\nARSTD\n"), false);
+        oled_write_P(PSTR("!@#$%\n"), false);
+        oled_write_P(PSTR("\nQWFPG"), false);
+        oled_write_P(PSTR("\nARSTD"), false);
         oled_write_P(PSTR("\nZXCVB\n"), false);
+        oled_write_P(PSTR("\n[{(<\n"), false);
+        oled_write_P(PSTR("\n+-=_"), false);
         return;
     }
 
@@ -534,6 +554,18 @@ bool encoder_update_user(uint8_t index, bool clockwise)
                 tap_code(KC_PGDOWN);
             else
                 tap_code(KC_PGUP);
+            break;
+        case aLRArrows:
+            if (clockwise)
+                tap_code(KC_LEFT);
+            else
+                tap_code(KC_RIGHT);
+            break;
+        case aUDArrows:
+            if (clockwise)
+                tap_code(KC_DOWN);
+            else
+                tap_code(KC_UP);
             break;
         case aVim:
             if (clockwise)
