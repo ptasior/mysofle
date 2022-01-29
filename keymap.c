@@ -183,6 +183,7 @@ enum Actions {
     aLRArrows,
     aUDArrows,
     aVim,
+    aTab,
     aCount
 };
 
@@ -345,6 +346,7 @@ const char* knob_to_str(int idx)
         case aLRArrows: return "<>  ";
         case aUDArrows: return "^v  ";
         case aVim: return "vim ";
+        case aTab: return "tab ";
     }
     return "???";
 }
@@ -370,16 +372,16 @@ static void print_status_right(void)
     itoa(get_current_wpm(), g_wpm_buf, 9);
     oled_write(g_wpm_buf, false);
 
-    static const char PROGMEM qmk_logo[] = {
-        153,154,10,
-        185,186,0
-    };
-
+    /* static const char PROGMEM qmk_logo[] = { */
+    /*     153,154,10, */
+    /*     185,186,0 */
+    /* }; */
+    /*  */
 	/* for (int i = 0; i < 3; i++) */
-	{
-		oled_write_P(PSTR("\n\n\n"), false);
-		oled_write_P(qmk_logo, false);
-	}
+	/* { */
+	/* 	oled_write_P(PSTR("\n\n\n"), false); */
+	/* 	oled_write_P(qmk_logo, false); */
+	/* } */
 
     /* else */
     /* { */
@@ -487,12 +489,13 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation)
 }
 
 
-void oled_task_user(void)
+bool oled_task_user(void)
 {
     if (is_keyboard_master())
         print_status_left();
     else
         print_status_right();
+    return false;
 }
 
 #endif
@@ -566,6 +569,12 @@ bool encoder_update_user(uint8_t index, bool clockwise)
                 tap_code(KC_DOWN);
             else
                 tap_code(KC_UP);
+            break;
+        case aTab:
+            if (clockwise)
+                tap_code16(LCTL(KC_TAB));
+            else
+                tap_code16(RCS(KC_TAB));
             break;
         case aVim:
             if (clockwise)
