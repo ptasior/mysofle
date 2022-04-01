@@ -44,12 +44,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
 
         case KC_MY_L_KNOB:
             if (record->event.pressed)
-                g_l_knob = (g_l_knob + 1) % aActionsCount;
+                g_l_knob[get_highest_layer(layer_state)] = (g_l_knob[get_highest_layer(layer_state)] + 1) % aActionsCount;
             return false;
 
         case KC_MY_R_KNOB:
             if (record->event.pressed)
-                g_r_knob = (g_r_knob + 1) % aActionsCount;
+                g_r_knob[get_highest_layer(layer_state)] = (g_r_knob[get_highest_layer(layer_state)] + 1) % aActionsCount;
             return false;
 
         case KC_MY_UNDO:

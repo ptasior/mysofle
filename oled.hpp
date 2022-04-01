@@ -9,13 +9,15 @@ const char* knob_to_str(int idx)
 		case aTmux: return "tmux";
 		case aMacDesktop: return "desk";
 		case aVolume: return "vol ";
-		case aScroll: return "whl ";
+		case aScroll: return "wh^v";
+		case aScrollH: return "wh<>";
 		case aZoom: return "zoom";
 		case aPage: return "page";
-		case aLRArrows: return "<>  ";
-		case aUDArrows: return "^v  ";
+		case aLRArrows: return "ar<>";
+		case aUDArrows: return "ar^v";
 		case aVim: return "vim ";
 		case aTab: return "tab ";
+		case aBrightness: return "bri ";
 	}
 	return "???";
 }
@@ -142,10 +144,10 @@ static void print_status_left(void)
 	oled_write_P(PSTR("\n\n"), false);
 
 	oled_write_P(PSTR("KNOBS"), false);
-	oled_write(knob_to_str(g_l_knob), false);
+	oled_write(knob_to_str(g_l_knob[get_highest_layer(layer_state)]), false);
 
 	oled_write_P(PSTR("\n"), false);
-	oled_write(knob_to_str(g_r_knob), false);
+	oled_write(knob_to_str(g_r_knob[get_highest_layer(layer_state)]), false);
 }
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation)
