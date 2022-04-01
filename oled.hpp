@@ -29,19 +29,23 @@ static void print_status_right(void)
 	if (get_highest_layer(layer_state) == L_AUX)
 	{
 		oled_clear();
-		oled_write_P(PSTR("^&*()\n"), false);
-		oled_write_P(PSTR("\nJLUY;"), false);
-		oled_write_P(PSTR("\nHNEIO"), false);
-		oled_write_P(PSTR("\nKM,./\n"), false);
-		oled_write_P(PSTR("\n>)}]"), false);
+		oled_write_P(PSTR("^&*()"), false);
+		oled_write_P(PSTR("JLUY;"), false);
+		oled_write_P(PSTR("HNEIO"), false);
+		oled_write_P(PSTR("KM,./"), false);
+		oled_write_P(PSTR("\n>)}]\n"), false);
+		oled_write_P(PSTR("\nPrSc"), false);
+		oled_write_P(PSTR("\nSyRq"), false);
+		oled_write_P(PSTR("\nPaus"), false);
+		oled_write_P(PSTR("\nNuLk"), false);
 		return;
 	}
 
-	oled_clear();
 	oled_write_P(PSTR("\n\n\n\nWPM\n"), false);
 
 	itoa(get_current_wpm(), g_wpm_buf, 9);
 	oled_write(g_wpm_buf, false);
+	oled_write_P(PSTR("\n\n\n\n\n\n\n"), false);
 
 	/* static const char PROGMEM qmk_logo[] = { */
 	/*     153,154,10, */
@@ -72,12 +76,20 @@ static void print_status_left(void)
 	if (get_highest_layer(layer_state) == L_AUX)
 	{
 		oled_clear();
-		oled_write_P(PSTR("!@#$%\n"), false);
-		oled_write_P(PSTR("\nQWFPG"), false);
-		oled_write_P(PSTR("\nARSTD"), false);
-		oled_write_P(PSTR("\nZXCVB\n"), false);
-		oled_write_P(PSTR("\n[{(<\n"), false);
-		oled_write_P(PSTR("\n+-=_"), false);
+		oled_write_P(PSTR("!@#$%"), false);
+		oled_write_P(PSTR("QWFPG"), false);
+		oled_write_P(PSTR("ARSTD"), false);
+		oled_write_P(PSTR("ZXCVB"), false);
+		oled_write_P(PSTR("\n[{(<"), false);
+		oled_write_P(PSTR("\n+-=_\n"), false);
+		oled_write_P(PSTR("\nScLk"), false);
+		oled_write_P(PSTR("\nCpLk"), false);
+		oled_write_P(PSTR("\nSwEs\n"), false);
+
+		oled_write_P(PSTR("\n"),false);
+		oled_write(knob_to_str(g_l_knob[get_highest_layer(layer_state)]), false);
+		oled_write_P(PSTR("\n"),false);
+		oled_write(knob_to_str(g_r_knob[get_highest_layer(layer_state)]), false);
 		return;
 	}
 
