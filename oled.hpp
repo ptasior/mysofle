@@ -41,11 +41,13 @@ static void print_status_right(void)
 		return;
 	}
 
+#ifdef WPM_ENABLE
 	oled_write_P(PSTR("\n\n\n\nWPM\n"), false);
 
 	itoa(get_current_wpm(), g_wpm_buf, 9);
 	oled_write(g_wpm_buf, false);
 	oled_write_P(PSTR("\n\n\n\n\n\n\n"), false);
+#endif
 
 	/* static const char PROGMEM qmk_logo[] = { */
 	/*     153,154,10, */

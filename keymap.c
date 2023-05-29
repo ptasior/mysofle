@@ -9,5 +9,6 @@ int g_r_knob[5] = {1,1,9, 10,5};
 #include "os_detect.hpp"
 #include "knobs.hpp"
 #include "oled.hpp"
+#include "rgb.hpp"
 #include "mappings.hpp"
 

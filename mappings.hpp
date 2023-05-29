@@ -109,6 +109,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
             return false;
 
         case KC_MY_CHARS:
+            // rgb_matrix_set_color_all(0, 200, 0);
             if (record->event.pressed)
                 layer_on(L_CHARS);
             else
@@ -118,6 +119,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
             return false;
 
         case KC_MY_MOVE:
+            // rgb_matrix_set_color_all(0, 0, 200);
             if (record->event.pressed)
                 layer_on(L_MOVE);
             else
@@ -127,6 +129,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
             return false;
 
         case KC_MY_AUX:
+            // rgb_matrix_set_color_all(0, 200, 200);
             if (record->event.pressed)
                 layer_on(L_AUX);
             else
