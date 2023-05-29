@@ -7,6 +7,7 @@ const char* knob_to_str(int idx)
 	switch (idx)
 	{
 		case aTmux: return "tmux";
+		case aTmuxEmbedded: return "tmEm";
 		case aMacDesktop: return "desk";
 		case aVolume: return "vol ";
 		case aScroll: return "wh^v";
@@ -82,11 +83,11 @@ static void print_status_left(void)
 		oled_write_P(PSTR("QWFPG"), false);
 		oled_write_P(PSTR("ARSTD"), false);
 		oled_write_P(PSTR("ZXCVB"), false);
-		oled_write_P(PSTR("\n[{(<"), false);
 		oled_write_P(PSTR("\n+-=_\n"), false);
 		oled_write_P(PSTR("\nScLk"), false);
 		oled_write_P(PSTR("\nCpLk"), false);
 		oled_write_P(PSTR("\nSwEs\n"), false);
+		oled_write_P(PSTR("\nSwOS\n"), false);
 
 		oled_write_P(PSTR("\n"),false);
 		oled_write(knob_to_str(g_l_knob[get_highest_layer(layer_state)]), false);

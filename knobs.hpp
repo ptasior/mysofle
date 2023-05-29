@@ -1,5 +1,6 @@
 enum Actions {
 	aTmux,
+	aTmuxEmbedded,
 	aMacDesktop,
 	aVolume,
 	aScroll,
@@ -44,6 +45,13 @@ bool encoder_update_user(uint8_t index, bool clockwise)
 	{
 		case aTmux:
 			tap_code16(LCTL(KC_B));
+			if (clockwise)
+				tap_code(KC_N);
+			else
+				tap_code(KC_P);
+			break;
+		case aTmuxEmbedded:
+			tap_code16(LCTL(KC_T));
 			if (clockwise)
 				tap_code(KC_N);
 			else

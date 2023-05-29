@@ -1,4 +1,3 @@
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record)
 {
     switch (keycode)
@@ -40,6 +39,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
         case KC_MY_SWAP_ESC:
             if (record->event.pressed)
                 g_swap_esc = ! g_swap_esc;
+            return false;
+
+        case KC_MY_SWAP_OS:
+            if (record->event.pressed)
+                g_host_os = ! g_host_os;
             return false;
 
         case KC_MY_L_KNOB:

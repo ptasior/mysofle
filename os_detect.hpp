@@ -1,6 +1,3 @@
-enum HostOS {hUnknown, hPC, hMac};
-enum HostOS g_host_os = hUnknown;
-
 void detect_pc(void)
 {
 	if (g_host_os != hUnknown)
