@@ -103,16 +103,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_MOVE] = LAYOUT( \
 		KC_NO,         KC_F1,         KC_F2,             KC_F3,          KC_F4,       KC_F5,                                  KC_F6,     KC_F7,     KC_F8,             KC_F9,         KC_F10,        KC_F11,
 		KC_MY_TAB,     KC_NO,         KC_NO,             KC_MY_FIND,     KC_NO,       KC_NO,                                  KC_PGUP,   KC_MY_HOME,KC_MY_P_WORD,      KC_MY_N_WORD,  KC_MY_END,     KC_MY_W_BSPC,
-		KC_TRNS,       KC_MY_ALL,     KC_MY_RELOAD,      KC_MY_SAVE,     KC_MY_N_TAB, KC_NO,                                  KC_PGDN,   KC_LEFT,   KC_DOWN,           KC_UP,         KC_RGHT,       KC_NO,
-
+		KC_TRNS,       KC_MY_ALL,     KC_MY_RELOAD,      KC_MY_SAVE,     KC_MY_N_TAB, KC_NO,                                  KC_PGDN,   KC_LEFT,   KC_DOWN,           KC_UP,         KC_RGHT,       KC_MY_W_DEL,
 		KC_TRNS,       KC_MY_UNDO,    KC_MY_CUT,         KC_MY_COPY,     KC_MY_PASTE, KC_NO,      KC_MY_L_KNOB, KC_MY_R_KNOB, KC_NO,     KC_MPLY,   KC_MPRV,           KC_MNXT,       KC_NO,         KC_TRNS,
                                       KC_TRNS,           KC_TRNS,        KC_TRNS,     MO(L_AUX),  KC_ENT,       KC_ENT,       MO(L_AUX), KC_TRNS,   KC_TRNS,           KC_TRNS),
 
 [L_AUX] = LAYOUT( \
 		KC_SLCK,       DF(L_QWERTY),  DF(L_COLEMAK),     KC_NO,          KC_NO,      KC_NO,                                  KC_NO,   KC_NO,   KC_NO,   KC_NO,         KC_NO,         KC_PSCR,
-		KC_CAPS,       KC_NO,         KC_NO,             KC_NO,          KC_NO,      KC_NO,                                  KC_NO,   KC_BTN1, KC_BTN1, KC_BTN2,       KC_BTN3,       KC_SYRQ,
+		KC_NLCK,       KC_NO,         KC_NO,             KC_NO,          KC_NO,      KC_NO,                                  KC_NO,   KC_BTN1, KC_BTN2, KC_BTN3,       KC_NO,         KC_SYRQ,
 		KC_MY_SWAP_ESC,RGB_TOG,       RGB_MOD,           RGB_SPI,        RGB_VAI,    RGB_HUI,                                KC_NO,   KC_MS_L, KC_MS_D, KC_MS_U,       KC_MS_R,       KC_PAUS,
-		KC_MY_SWAP_OS, KC_NO,         RGB_RMOD,          RGB_SPD,        RGB_VAD,    RGB_HUD,    KC_MY_L_KNOB, KC_MY_R_KNOB, KC_NO,   KC_ACL0, KC_ACL1, KC_ACL2,       KC_NO,         KC_NLCK,
+		KC_MY_SWAP_OS, KC_NO,         RGB_RMOD,          RGB_SPD,        RGB_VAD,    RGB_HUD,    KC_MY_L_KNOB, KC_MY_R_KNOB, KC_NO,   KC_ACL0, KC_ACL1, KC_ACL2,       KC_WWW_BACK,   KC_INS,
                                       KC_TRNS,           KC_TRNS,        KC_TRNS,    KC_TRNS,    KC_TRNS,      KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS)
 };
 

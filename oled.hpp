@@ -9,16 +9,17 @@ const char* knob_to_str(int idx)
 		case aTmux: return "tmux";
 		case aTmuxEmbedded: return "tmEm";
 		case aMacDesktop: return "desk";
-		case aVolume: return "vol ";
-		case aScroll: return "wh^v";
+		// case aVolume: return "vol ";
+		// case aScroll: return "wh^v";
 		case aScrollH: return "wh<>";
 		case aZoom: return "zoom";
-		case aPage: return "page";
-		case aLRArrows: return "ar<>";
-		case aUDArrows: return "ar^v";
+		// case aPage: return "page";
+		// case aLRArrows: return "ar<>";
+		// case aUDArrows: return "ar^v";
 		case aVim: return "vim ";
-		case aTab: return "tab ";
-		case aBrightness: return "bri ";
+		// case aTab: return "tab ";
+		// case aBrightness: return "bri ";
+		case aCycleWindows: return "win ";
 	}
 	return "???";
 }
@@ -38,7 +39,7 @@ static void print_status_right(void)
 		oled_write_P(PSTR("\nPrSc"), false);
 		oled_write_P(PSTR("\nSyRq"), false);
 		oled_write_P(PSTR("\nPaus"), false);
-		oled_write_P(PSTR("\nNuLk"), false);
+		oled_write_P(PSTR("\nIns \n"), false);
 		return;
 	}
 
@@ -85,8 +86,8 @@ static void print_status_left(void)
 		oled_write_P(PSTR("ZXCVB"), false);
 		oled_write_P(PSTR("\n+-=_\n"), false);
 		oled_write_P(PSTR("\nScLk"), false);
-		oled_write_P(PSTR("\nCpLk"), false);
-		oled_write_P(PSTR("\nSwEs\n"), false);
+		oled_write_P(PSTR("\nNuLk"), false);
+		oled_write_P(PSTR("\nSwEs"), false);
 		oled_write_P(PSTR("\nSwOS\n"), false);
 
 		oled_write_P(PSTR("\n"),false);
