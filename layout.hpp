@@ -108,9 +108,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       KC_TRNS,           KC_TRNS,        KC_TRNS,     MO(L_AUX),  KC_ENT,       KC_ENT,       MO(L_AUX), KC_TRNS,   KC_TRNS,           KC_TRNS),
 
 [L_AUX] = LAYOUT( \
-		KC_SLCK,       DF(L_QWERTY),  DF(L_COLEMAK),     KC_NO,          KC_NO,      KC_NO,                                  KC_NO,   KC_NO,   KC_NO,   KC_NO,         KC_NO,         KC_PSCR,
-		KC_NLCK,       KC_NO,         KC_NO,             KC_NO,          KC_NO,      KC_NO,                                  KC_NO,   KC_BTN1, KC_BTN2, KC_BTN3,       KC_NO,         KC_SYRQ,
-		KC_MY_SWAP_ESC,RGB_TOG,       RGB_MOD,           RGB_SPI,        RGB_VAI,    RGB_HUI,                                KC_NO,   KC_MS_L, KC_MS_D, KC_MS_U,       KC_MS_R,       KC_PAUS,
+		KC_NO,         DF(L_QWERTY),  DF(L_COLEMAK),     KC_NO,          KC_NO,      KC_NO,                                  KC_NO,   KC_NO,   KC_NO,   KC_NO,         KC_NO,         KC_PSCR,
+		KC_MY_SWAP_ESC,KC_NLCK,       KC_SLCK,           KC_NO,          KC_NO,      KC_NO,                                  KC_NO,   KC_BTN1, KC_BTN2, KC_BTN3,       KC_NO,         KC_SYRQ,
+		KC_NO,         RGB_TOG,       RGB_MOD,           RGB_SPI,        RGB_VAI,    RGB_HUI,                                KC_NO,   KC_MS_L, KC_MS_D, KC_MS_U,       KC_MS_R,       KC_PAUS,
 		KC_MY_SWAP_OS, KC_NO,         RGB_RMOD,          RGB_SPD,        RGB_VAD,    RGB_HUD,    KC_MY_L_KNOB, KC_MY_R_KNOB, KC_NO,   KC_ACL0, KC_ACL1, KC_ACL2,       KC_WWW_BACK,   KC_INS,
                                       KC_TRNS,           KC_TRNS,        KC_TRNS,    KC_TRNS,    KC_TRNS,      KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS)
 };
